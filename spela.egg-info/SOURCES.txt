@@ -1,9 +1,12 @@
+README.md
 setup.py
 spela/__init__.py
+spela/melspectrogram.py
 spela/spectrogram.py
 spela.egg-info/PKG-INFO
 spela.egg-info/SOURCES.txt
 spela.egg-info/dependency_links.txt
+spela.egg-info/requires.txt
 spela.egg-info/top_level.txt
 utils/__init__.py
 utils/backend.py
