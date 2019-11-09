@@ -14,7 +14,7 @@ new_wav.shape
 
 model = tf.keras.Sequential()
 model.add(Spectrogram(n_dft=512, n_hop=256,
-                    input_shape=(new_wav.shape[1],new_wav.shape[2]),
+                    input_shape=(1,16000),
                       return_decibel_spectrogram=True, power_spectrogram=2.0,
                       trainable_kernel=False, name='static_stft'))
 model.add(tf.keras.layers.Conv2D(32,(3,3), padding='same', activation='relu'))

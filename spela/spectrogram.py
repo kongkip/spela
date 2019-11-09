@@ -1,62 +1,56 @@
 import tensorflow as tf
 from tensorflow.keras import backend as K
 from utils import backend, conv_utils
+from tensorflow.keras.layers import Layer
 
 
-class Spectrogram(tf.keras.layers.Layer):
+class Spectrogram(Layer):
     """
     ### `Spectrogram`
+    ```python
+    Spectrogram(n_dft=512, n_hop=None, padding='same',
+                                     power_spectrogram=2.0, return_decibel_spectrogram=False,
+                                     trainable_kernel=False, image_data_format='default',
+                                     **kwargs)
+    ```
     Spectrogram layer that outputs spectrogram(s) in 2D image format.
-
     #### Parameters
      * n_dft: int > 0 [scalar]
        - The number of DFT points, presumably power of 2.
        - Default: ``512``
-
      * n_hop: int > 0 [scalar]
        - Hop length between frames in sample,  probably <= ``n_dft``.
        - Default: ``None`` (``n_dft / 2`` is used)
-
      * padding: str, ``'same'`` or ``'valid'``.
        - Padding strategies at the ends of signal.
        - Default: ``'same'``
-
      * power_spectrogram: float [scalar],
        -  ``2.0`` to get power-spectrogram, ``1.0`` to get amplitude-spectrogram.
        -  Usually ``1.0`` or ``2.0``.
        -  Default: ``2.0``
-
      * return_decibel_spectrogram: bool,
        -  Whether to return in decibel or not, i.e. returns log10(amplitude spectrogram) if ``True``.
        -  Recommended to use ``True``, although it's not by default.
        -  Default: ``False``
-
      * trainable_kernel: bool
        -  Whether the kernels are trainable or not.
        -  If ``True``, Kernels are initialised with DFT kernels and then trained.
        -  Default: ``False``
-
      * image_data_format: string, ``'channels_first'`` or ``'channels_last'``.
        -  The returned spectrogram follows this image_data_format strategy.
        -  If ``'default'``, it follows the current Keras session's setting.
        -  Setting is in ``./keras/keras.json``.
        -  Default: ``'default'``
-
     #### Notes
      * The input should be a 2D array, ``(audio_channel, audio_length)``.
      * E.g., ``(1, 44100)`` for mono signal, ``(2, 44100)`` for stereo signal.
      * It supports multichannel signal input, so ``audio_channel`` can be any positive integer.
      * The input shape is not related to keras `image_data_format()` config.
-
     #### Returns
-
     A Keras layer
-
      * abs(Spectrogram) in a shape of 2D data, i.e.,
      * `(None, n_channel, n_freq, n_time)` if `'channels_first'`,
      * `(None, n_freq, n_time, n_channel)` if `'channels_last'`,
-
-
     """
 
     def __init__(self, n_dft=512, n_hop=None, padding='same',
@@ -135,7 +129,6 @@ class Spectrogram(tf.keras.layers.Layer):
             output = backend.amplitude_to_decibel(output)
         return output
 
-    # @property
     def get_config(self):
         config = {'n_dft': self.n_dft,
                   'n_hop': self.n_hop,
