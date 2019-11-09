@@ -135,7 +135,7 @@ class Spectrogram(tf.keras.layers.Layer):
             output = backend.amplitude_to_decibel(output)
         return output
 
-    @property
+    # @property
     def get_config(self):
         config = {'n_dft': self.n_dft,
                   'n_hop': self.n_hop,
@@ -144,7 +144,7 @@ class Spectrogram(tf.keras.layers.Layer):
                   'return_decibel_spectrogram': self.return_decibel_spectrogram,
                   'trainable_kernel': self.trainable_kernel,
                   'image_data_format': self.image_data_format}
-        base_config = super(Spectrogram, self).get_config
+        base_config = super(Spectrogram, self).get_config()
         return dict(list(base_config.items()) + list(config.items()))
 
     def _spectrogram_mono(self, x):
