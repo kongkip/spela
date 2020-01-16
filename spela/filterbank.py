@@ -116,5 +116,5 @@ class Filterbank(tf.keras.layers.Layer):
                   "fmax": self.fmax,
                   "bins_per_octave": self.bins_per_octave,
                   "trainable": self.trainable}
-        return {list(config.items()) + list(base_config.items())}
+        return dict(list(config.items()) + list(base_config.items()))
 

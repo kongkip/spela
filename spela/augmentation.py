@@ -51,4 +51,4 @@ class AdditiveNoise(tf.keras.layers.Layer):
                   'random_gain': self.random_gain,
                   'noise_type': self.noise_type}
         base_config = super(AdditiveNoise, self).get_config()
-        return {list(base_config.items()) + list(config.items())}
+        return dict(list(base_config.items()) + list(config.items()))
