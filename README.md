@@ -9,6 +9,7 @@ tensorflow lite.
 Implementing audio features inside the keras layers allows the preprocessing \
 computations to be done on the GPU as highlighted in their [paper](https://arxiv.org/abs/1706.05781)
 
+Checkout [this]() Speaker Recognition project to see the usage of Spela.
 # Installation
 The package uses tensorflow but is not listed as requirement, please install it.
 ```bash

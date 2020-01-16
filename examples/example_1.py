@@ -3,11 +3,11 @@ import numpy as np
 import librosa
 from spela.spectrogram import Spectrogram
 
-data_dir  = "../../../Work/Tambua/"
+data_dir = "../../../Work/Tambua/"
 # import mute_tf_warning as mw
 
 SR = 16000
-wav = librosa.load("examples/data/62.wav",sr=SR)[0]
+wav = librosa.load("examples/data/62.wav", sr=SR)[0]
 wav.shape
 new_wav = wav[np.newaxis, np.newaxis, :]
 new_wav.shape
