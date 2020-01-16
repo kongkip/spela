@@ -1,7 +1,10 @@
 README.md
 setup.py
 spela/__init__.py
+spela/augmentation.py
+spela/filterbank.py
 spela/melspectrogram.py
+spela/normalisation.py
 spela/spectrogram.py
 spela.egg-info/PKG-INFO
 spela.egg-info/SOURCES.txt

@@ -4,12 +4,13 @@ from librosa.display import waveplot, specshow
 import tensorflow as tf
 import matplotlib.pyplot as plt
 from spela.spectrogram import Spectrogram
+from spela.normalisation import Normalization2D
 import mute_tf_warnings as mw
 
 mw.tf_mute_warning()
 
-SR = 16000
-wav = librosa.load("../examples/data/62.wav", sr=16000)[0]
+SR = 8000
+wav = librosa.load("examples/data/62.wav", sr=8000)[0]
 print(wav.shape)
 src = np.random.random((1, SR * 3))
 new = wav[np.newaxis, np.newaxis, :]
@@ -30,6 +31,8 @@ model = tf.keras.Sequential()
 model.add(Spectrogram(n_dft=512, n_hop=256, input_shape=(height, width),
                       return_decibel_spectrogram=True, power_spectrogram=2.0,
                       trainable_kernel=False, name='static_stft'))
+# model.add(Normalization2D(str_axis='freq'))
+
 
 model.compile(optimizer=tf.keras.optimizers.Adam(lr=0.001),
               loss="categorical_crossentropy"

@@ -1,4 +1,3 @@
-import tensorflow as tf
 from tensorflow.keras import backend as K
 from utils import backend, conv_utils
 from tensorflow.keras.layers import Layer
@@ -8,7 +7,7 @@ class Spectrogram(Layer):
     """
     ### `Spectrogram`
     ```python
-    kapre.time_frequency.Spectrogram(n_dft=512, n_hop=None, padding='same',
+    Spectrogram(n_dft=512, n_hop=None, padding='same',
                                      power_spectrogram=2.0, return_decibel_spectrogram=False,
                                      trainable_kernel=False, image_data_format='default',
                                      **kwargs)
@@ -92,9 +91,9 @@ class Spectrogram(Layer):
             assert self.len_src >= self.n_dft, 'Hey! The input is too short!'
 
         self.n_frame = conv_utils.conv_output_length(self.len_src,
-                                          self.n_dft,
-                                          self.padding,
-                                          self.n_hop)
+                                                     self.n_dft,
+                                                     self.padding,
+                                                     self.n_hop)
 
         dft_real_kernels, dft_imag_kernels = backend.get_stft_kernels(self.n_dft)
         self.dft_real_kernels = K.variable(dft_real_kernels, dtype=K.floatx(), name="real_kernels")
