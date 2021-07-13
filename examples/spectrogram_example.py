@@ -1,13 +1,10 @@
 import librosa
 import matplotlib.pyplot as plt
-import mute_tf_warnings as mw
 import numpy as np
 import tensorflow as tf
 from librosa.display import waveplot, specshow
 
 from spela.spectrogram import Spectrogram
-
-mw.tf_mute_warning()
 
 SR = 8000
 wav = librosa.load("examples/data/62.wav", sr=8000)[0]
