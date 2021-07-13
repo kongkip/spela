@@ -3,7 +3,6 @@ import numpy as np
 import librosa
 from spela.spectrogram import Spectrogram
 
-data_dir = "../../../Work/Tambua/"
 # import mute_tf_warning as mw
 
 SR = 16000

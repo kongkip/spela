@@ -9,7 +9,7 @@ with open(os.path.join(HERE, "README.md")) as fid:
 setup(
     name='spela',
     version='0.0.5',
-    packages=['spela', 'utils'],
+    packages=['spela'],
     url='https://github.com/kongkip/spela.git',
     long_description=str(README),
     long_description_content_type="text/markdown",

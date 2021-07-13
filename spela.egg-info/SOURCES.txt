@@ -11,6 +11,3 @@ spela.egg-info/SOURCES.txt
 spela.egg-info/dependency_links.txt
 spela.egg-info/requires.txt
 spela.egg-info/top_level.txt
-utils/__init__.py
-utils/backend.py
-utils/conv_utils.py
