@@ -41,9 +41,9 @@ class Normalization2D(tf.keras.layers.Layer):
             self.image_data_format = image_data_format
 
         self.str_axis = str_axis
-        if self.str_axis is None: # use int_axis
+        if self.str_axis is None:  # use int_axis
             self.int_axis = int_axis
-        else: # use str_axis
+        else:  # use str_axis
             # warning
             if int_axis is not None:
                 print('int_axis={} passed but is ignored, str_axis is used instead.'.format(int_axis))

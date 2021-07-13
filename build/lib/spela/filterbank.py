@@ -1,5 +1,6 @@
 import tensorflow as tf
-from utils import backend
+
+from .utils import backend
 
 
 class Filterbank(tf.keras.layers.Layer):
@@ -117,4 +118,3 @@ class Filterbank(tf.keras.layers.Layer):
                   "bins_per_octave": self.bins_per_octave,
                   "trainable": self.trainable}
         return dict(list(config.items()) + list(base_config.items()))
-

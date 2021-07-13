@@ -1,6 +1,8 @@
 from tensorflow.keras import backend as K
-from utils import backend, conv_utils
 from tensorflow.keras.layers import Layer
+from tensorflow.python.keras.utils import conv_utils
+
+from .utils import backend
 
 
 class Spectrogram(Layer):

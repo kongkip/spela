@@ -1,11 +1,11 @@
 import librosa
-import numpy as np
-from librosa.display import waveplot, specshow
-import tensorflow as tf
 import matplotlib.pyplot as plt
-from spela.spectrogram import Spectrogram
-from spela.normalisation import Normalization2D
 import mute_tf_warnings as mw
+import numpy as np
+import tensorflow as tf
+from librosa.display import waveplot, specshow
+
+from spela.spectrogram import Spectrogram
 
 mw.tf_mute_warning()
 

@@ -1,10 +1,11 @@
 from __future__ import absolute_import
 
-from tensorflow.keras import backend as K
-import numpy as np
-import librosa
 # Forward compatability to replace xrange
 from builtins import range
+
+import librosa
+import numpy as np
+from tensorflow.keras import backend as K
 
 EPS = 1e-7
 

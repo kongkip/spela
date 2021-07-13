@@ -1,4 +1,5 @@
 # SPELA - spectrogram layers
+
 Rewrote [kapre](https://github.com/kongkip/kapre#installation) using tensorflow.keras \
 credits go to Keunwoo Choi for writing kapre
 
@@ -10,12 +11,17 @@ Implementing audio features inside the keras layers allows the preprocessing \
 computations to be done on the GPU as highlighted in their [paper](https://arxiv.org/abs/1706.05781)
 
 Checkout [this]() Speaker Recognition project to see the usage of Spela.
+
 # Installation
+
 The package uses tensorflow but is not listed as requirement, please install it.
+
 ```bash
 pip install spela
 ```
+
 or
+
 ```bash
 git clone https://github.com/kongkip/spela.git
 cd spela
@@ -23,7 +29,9 @@ python setup.py install
 ```
 
 # Usage
+
 ## spectrogram
+
 ```python
 import tensorflow as tf
 from spela.spectrogram import Spectrogram
@@ -49,6 +57,7 @@ model.fit(x,y)
 ```
 
 ## Mel Spectrogram
+
 ```python
 import tensorflow as tf
 from spela.melspectrogram import Melspectrogram

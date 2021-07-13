@@ -1,8 +1,8 @@
 import numpy as np
-import tensorflow as tf
 from tensorflow.keras import backend as K
-from utils import backend
+
 from spela.spectrogram import Spectrogram
+from .utils import backend
 
 
 class Melspectrogram(Spectrogram):

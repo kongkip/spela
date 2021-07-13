@@ -1,5 +1,4 @@
 def conv_output_length(input_length, filter_size, padding, stride, dilation=1):
-
     if input_length is None:
         return None
         assert padding in {'same', 'valid', 'full', 'causal'}
